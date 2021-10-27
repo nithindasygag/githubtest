@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Create Profile:</title>
+</head>
+
+<body>
+
+    <div style="width:50%; margin: auto; padding:30px; border:1px solid blue; background-color:#1B4F72">
+
+        <form action={% url 'details' %} method="post" enctype="multipart/form-data">
+
+        <div style="font-size:25px">First Name : <span style="font-style:italic; font-size:20px">{{p.first_name|upper}}</span></div>
+        <div style="font-size:25px">Last Name : <span style="font-style:italic; font-size:20px">{{p.last_name|upper}}</span></div>
+        <div style="font-size:25px">Department : <span style="font-style:italic; font-size:20px">{{p.department|upper}}</span></div>
+        <div style="font-size:25px">Phone Number : <span style="font-style:italic; font-size:20px">{{p.phone_number}}</span></div>
+        <div style="font-size:25px">Country : <span style="font-style:italic; font-size:20px">{{p.country}}</span></div>
+        <div style="font-size:25px">Building No : <span style="font-style:italic; font-size:20px">{{p.address1}}</span></div>
+        <div style="font-size:25px">Street : <span style="font-style:italic; font-size:20px">{{p.address2}}</span></div>
+        <div style="font-size:25px">City : <span style="font-style:italic; font-size:20px">{{p.address3}}</span></div>
+        <div style="font-size:25px">Zipcode : <span style="font-style:italic; font-size:20px">{{p.zipcode}}</span></div>
+        <div style="display:inline-block ;margin-right:10px">
+            <div style="display:inline-block ; float: right; margin-bottom:20px;">
+            <img src="{{ p.profile_image.url }}" height="100px" width="100px" >
+        </div>
+
+    </div>
+    </div>
+</body>
+</html>

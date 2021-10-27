@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>DETAILS LIST</title>
+</head>
+<body>
+    {% for p in ppl %}
+    <a href="{{BASE_DIR}}edit/{{p.id}}">
+        <div style="width:50%; margin:10px auto; padding:20px; border:1px solid #ffffff; background-color:#D98880 ; height:140px;">
+            <div style="display:inline-block ;margin-right:10px">
+                <div style="font-size:25px; color:#17202A ">First Name : <span style="font-style:italic; font-size:20px">{{p.first_name|upper}}</span></div>
+                <div style="font-size:25px; color:#17202A ">Last Name : <span style="font-style:italic; font-size:20px">{{p.last_name|upper}}</span></div>
+            </div>
+            <div style="display:inline-block ; float: right; margin-bottom:20px;">
+                <img src="{{ p.profile_image.url }}" height="100px" width="100px" >
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</body>
+</html>
