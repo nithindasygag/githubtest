@@ -16,6 +16,7 @@ class Peoples(models.Model):
     address2 = models.CharField(max_length=100, blank=True, null=True)
     address3 = models.CharField(max_length=100, blank=True, null=True)
     zipcode = models.CharField(max_length=100, blank=True, null=True)
+    test_field = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.first_name
